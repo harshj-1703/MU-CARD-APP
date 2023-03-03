@@ -1,9 +1,12 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:mu_card/login/welcomemobile.dart';
 
 class WelcomeName extends StatefulWidget {
-  const WelcomeName({super.key});
+  static String welcomeName = '';
+  static String welcomeEmail = '';
+  WelcomeName({super.key});
 
   @override
   State<WelcomeName> createState() => _WelcomeNameState();
@@ -38,7 +41,7 @@ class _WelcomeNameState extends State<WelcomeName> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(10, 50, 10, 0),
+                    padding: EdgeInsets.fromLTRB(10, 50, 10, 0),
                     child: Container(
                       height: 17,
                       width: 280,
@@ -59,7 +62,7 @@ class _WelcomeNameState extends State<WelcomeName> {
               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 70, 0, 0),
+                    padding: EdgeInsets.fromLTRB(20, 70, 0, 0),
                     child: Text(
                       'Welcome to MU',
                       style: TextStyle(
@@ -75,7 +78,7 @@ class _WelcomeNameState extends State<WelcomeName> {
               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+                    padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
                     child: Text(
                       'Let\'s get started...',
                       style: TextStyle(
@@ -90,7 +93,7 @@ class _WelcomeNameState extends State<WelcomeName> {
               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 55, 0, 0),
+                    padding: EdgeInsets.fromLTRB(20, 55, 0, 0),
                     child: Text(
                       'Name',
                       style: TextStyle(
@@ -103,11 +106,12 @@ class _WelcomeNameState extends State<WelcomeName> {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(20, 10, 20, 0),
+                padding: EdgeInsets.fromLTRB(20, 10, 20, 0),
                 child: SizedBox(
                   height: 44,
                   child: TextField(
                     controller: nameController,
+                    keyboardType: TextInputType.name,
                     cursorColor: Colors.black,
                     style: TextStyle(
                         color: Colors.black,
@@ -115,6 +119,7 @@ class _WelcomeNameState extends State<WelcomeName> {
                         letterSpacing: 1.1,
                         fontFamily: 'Times New Roman'),
                     decoration: InputDecoration(
+                      counterText: '',
                       contentPadding: EdgeInsets.fromLTRB(14, 5, 14, 5),
                       filled: true,
                       fillColor: Colors.white,
@@ -128,7 +133,7 @@ class _WelcomeNameState extends State<WelcomeName> {
               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 20, 0, 0),
+                    padding: EdgeInsets.fromLTRB(20, 20, 0, 0),
                     child: Text(
                       'Email ID',
                       style: TextStyle(
@@ -141,11 +146,12 @@ class _WelcomeNameState extends State<WelcomeName> {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(20, 10, 20, 0),
+                padding: EdgeInsets.fromLTRB(20, 10, 20, 0),
                 child: SizedBox(
                   height: 44,
                   child: TextField(
                     controller: emailController,
+                    keyboardType: TextInputType.emailAddress,
                     cursorColor: Colors.black,
                     style: TextStyle(
                         color: Colors.black,
@@ -153,6 +159,7 @@ class _WelcomeNameState extends State<WelcomeName> {
                         letterSpacing: 1.1,
                         fontFamily: 'Times New Roman'),
                     decoration: InputDecoration(
+                      counterText: '',
                       contentPadding: EdgeInsets.fromLTRB(14, 5, 14, 5),
                       filled: true,
                       fillColor: Colors.white,
@@ -166,7 +173,7 @@ class _WelcomeNameState extends State<WelcomeName> {
               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 15, 0, 0),
+                    padding: EdgeInsets.fromLTRB(20, 15, 0, 0),
                     child: TextButton(
                       onPressed: () {
                         setState(() {
@@ -213,6 +220,7 @@ class _WelcomeNameState extends State<WelcomeName> {
                               letterSpacing: 1,
                               fontFamily: 'Times New Roman'),
                           decoration: InputDecoration(
+                            counterText: '',
                             contentPadding: EdgeInsets.all(5),
                             filled: true,
                             fillColor: Colors.white,
@@ -223,7 +231,7 @@ class _WelcomeNameState extends State<WelcomeName> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+                        padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
                         child: TextButton(
                           onPressed: () {},
                           style: TextButton.styleFrom(
@@ -249,12 +257,23 @@ class _WelcomeNameState extends State<WelcomeName> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(0, 24, 0, 0),
+                    padding: EdgeInsets.fromLTRB(0, 24, 0, 0),
                     child: SizedBox(
                       height: 50,
                       width: 140,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          setState(() {
+                            WelcomeName.welcomeName = nameController.text;
+                            WelcomeName.welcomeEmail = emailController.text;
+                            Navigator.pushAndRemoveUntil(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => WelcomeMobile()),
+                                // ModalRoute.withName("/MainScreen")
+                                ((route) => true));
+                          });
+                        },
                         child: Text(
                           'Next',
                           style: TextStyle(
