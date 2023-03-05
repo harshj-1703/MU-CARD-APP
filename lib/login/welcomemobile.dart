@@ -1,8 +1,11 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables
 
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:mu_card/login/welcomename.dart';
+import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 
 class WelcomeMobile extends StatefulWidget {
   WelcomeMobile({super.key});
@@ -14,12 +17,47 @@ class WelcomeMobile extends StatefulWidget {
 class _WelcomeMobileState extends State<WelcomeMobile> {
   TextEditingController welcomeMobileController =
       TextEditingController(text: '');
+
+  //visibility
   bool otpVisibility = false;
   String initialCountry = 'IN';
   PhoneNumber number = PhoneNumber(isoCode: 'IN');
+  bool numberValidate = false;
+  bool setNumberValidate = false;
+
+  //phonenumber and otp
+  String setedPhoneNumber = '';
+  String otpEntered = '';
+
+  //Timer Of OTP
+  Timer? countdownTimer;
+  Duration otpDuration = Duration(minutes: 1);
+
+  int pressedTimer = 0;
+  void startTimer() {
+    countdownTimer =
+        Timer.periodic(Duration(seconds: 1), (_) => setCountDown());
+  }
+
+  void setCountDown() {
+    final reduceSecondsBy = 1;
+    setState(() {
+      final seconds = otpDuration.inSeconds - reduceSecondsBy;
+      if (seconds < 0) {
+        countdownTimer!.cancel();
+      } else {
+        otpDuration = Duration(seconds: seconds);
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
+    //set timer
+    String strDigits(int n) => n.toString().padLeft(2, '0');
+    final minutes = strDigits(otpDuration.inMinutes.remainder(60));
+    final seconds = strDigits(otpDuration.inSeconds.remainder(60));
+
     return Container(
       alignment: Alignment.center,
       decoration: BoxDecoration(
@@ -51,7 +89,7 @@ class _WelcomeMobileState extends State<WelcomeMobile> {
                           backgroundColor: Color.fromARGB(255, 178, 178, 178),
                           valueColor: new AlwaysStoppedAnimation<Color>(
                               Color.fromARGB(255, 246, 255, 0)),
-                          value: 0.5,
+                          value: setNumberValidate == false ? 0.5 : 0.7,
                           minHeight: 17,
                         ),
                       ),
@@ -105,16 +143,29 @@ class _WelcomeMobileState extends State<WelcomeMobile> {
               Padding(
                 padding: EdgeInsets.fromLTRB(20, 10, 20, 0),
                 child: InternationalPhoneNumberInput(
+                  isEnabled: !setNumberValidate,
                   onInputChanged: (PhoneNumber number) {
                     print(number.phoneNumber);
+                    setState(() {
+                      setedPhoneNumber = number.phoneNumber.toString();
+                    });
                   },
                   onInputValidated: (bool value) {
-                    print(value);
+                    // print(value);
+                    if (value == true) {
+                      setState(() {
+                        numberValidate = true;
+                      });
+                    } else {
+                      setState(() {
+                        numberValidate = false;
+                      });
+                    }
                   },
                   selectorConfig: SelectorConfig(
                     selectorType: PhoneInputSelectorType.DIALOG,
                   ),
-                  ignoreBlank: false,
+                  // ignoreBlank: false,
                   autoValidateMode: AutovalidateMode.disabled,
                   selectorTextStyle:
                       TextStyle(color: Colors.black, fontSize: 18),
@@ -124,16 +175,17 @@ class _WelcomeMobileState extends State<WelcomeMobile> {
                       fontFamily: 'Times New Roman',
                       fontWeight: FontWeight.bold,
                       letterSpacing: 2),
-                  initialValue: number,
-                  maxLength: 10,
                   formatInput: true,
+                  maxLength: 12,
                   keyboardType: TextInputType.numberWithOptions(
                       signed: true, decimal: true),
                   // inputBorder: OutlineInputBorder(),
                   inputDecoration: InputDecoration(
                     contentPadding: EdgeInsets.fromLTRB(14, 5, 14, 5),
                     filled: true,
-                    fillColor: Colors.white,
+                    fillColor: setNumberValidate == true
+                        ? Color.fromARGB(255, 225, 225, 225)
+                        : Colors.white,
                     border: OutlineInputBorder(
                         borderSide: BorderSide.none,
                         borderRadius: BorderRadius.circular(10)),
@@ -145,55 +197,173 @@ class _WelcomeMobileState extends State<WelcomeMobile> {
                 //   ],
                 // ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.fromLTRB(0, 24, 0, 0),
-                    child: SizedBox(
-                      height: 50,
-                      width: 140,
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        child: Text(
-                          'Get OTP',
-                          style: TextStyle(
-                              color: Color.fromARGB(255, 238, 255, 0),
-                              fontSize: 21,
-                              letterSpacing: 1.4),
-                        ),
-                        style: ElevatedButton.styleFrom(
-                          primary:
-                              Color.fromARGB(130, 48, 40, 40), // background
-                        ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+                child: Visibility(
+                  visible: setNumberValidate,
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Verify ' + setedPhoneNumber,
+                            style: TextStyle(
+                                fontSize: 24,
+                                fontFamily: 'Times New Roman',
+                                fontWeight: FontWeight.w600,
+                                color: Color.fromARGB(255, 59, 59, 59)),
+                          ),
+                        ],
                       ),
-                    ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Please enter the OTP sent to you for verification.',
+                            style: TextStyle(
+                                fontSize: 12.5,
+                                fontFamily: 'Times New Roman',
+                                fontWeight: FontWeight.w500,
+                                color: Color.fromARGB(255, 59, 59, 59)),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
-                ],
+                ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
-                    child: TextButton(
-                      onPressed: () {},
-                      style: TextButton.styleFrom(
-                        padding: EdgeInsets.zero,
-                        minimumSize: Size(50, 25),
-                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+                child: Visibility(
+                  visible: setNumberValidate,
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          OtpTextField(
+                            numberOfFields: 6,
+                            borderColor: Color(0xFF512DA8),
+                            enabledBorderColor: Colors.black,
+                            textStyle: TextStyle(
+                                fontFamily: 'Times New Roman',
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                                color: Color.fromARGB(255, 81, 17, 92)),
+                            //set to true to show as box or false to show as dash
+                            showFieldAsBox: true,
+                            //runs when a code is typed in
+                            onCodeChanged: (String code) {
+                              //handle validation or checks here
+                            },
+                            //runs when every textfield is filled
+                            onSubmit: (String verificationCode) {
+                              // showDialog(
+                              //     context: context,
+                              //     builder: (context) {
+                              //       return AlertDialog(
+                              //         title: Text("Verification Code"),
+                              //         content: Text(
+                              //             'Code entered is $verificationCode'),
+                              //       );
+                              //     });
+                              setState(() {
+                                otpEntered = verificationCode;
+                              });
+                            }, // end onSubmit
+                          ),
+                        ],
                       ),
-                      child: Text(
-                        '<<Back To Login',
-                        style: TextStyle(
-                            fontSize: 15,
-                            letterSpacing: 1,
-                            color: Color.fromARGB(255, 255, 187, 0),
-                            fontWeight: FontWeight.bold),
-                      ),
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(15, 15, 15, 0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              minutes + ' : ' + seconds,
+                              style: TextStyle(
+                                  color: Colors.red,
+                                  fontFamily: 'Times New Roman',
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.fromLTRB(0, 24, 0, 0),
+                child: SizedBox(
+                  height: 50,
+                  width: 140,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        setNumberValidate = numberValidate;
+                      });
+                      if (setNumberValidate == true) {
+                        if (pressedTimer == 0) {
+                          startTimer();
+                          pressedTimer++;
+                        }
+                        if (seconds != '00') {
+                          print(otpEntered);
+                        }
+                        if (seconds == '00') {
+                          print("Time is over");
+                        }
+                      }
+                    },
+                    child: Text(
+                      setNumberValidate == false ? 'Get OTP' : 'Verify',
+                      style: TextStyle(
+                          color: Color.fromARGB(255, 238, 255, 0),
+                          fontSize: 21,
+                          letterSpacing: 1.4),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      primary: Color.fromARGB(130, 48, 40, 40), // background
                     ),
                   ),
-                ],
+                ),
+              ),
+              Visibility(
+                visible: !setNumberValidate,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
+                      child: TextButton(
+                        onPressed: () {
+                          Navigator.pushAndRemoveUntil(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => WelcomeName()),
+                              // ModalRoute.withName("/MainScreen")
+                              ((route) => false));
+                        },
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                          minimumSize: Size(50, 25),
+                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        ),
+                        child: Text(
+                          '<<Back To Login',
+                          style: TextStyle(
+                              fontSize: 15,
+                              letterSpacing: 1,
+                              color: Color.fromARGB(255, 255, 187, 0),
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
