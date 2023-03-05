@@ -4,6 +4,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
+import 'package:mu_card/dashboard.dart';
 import 'package:mu_card/login/welcomename.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 
@@ -41,14 +42,16 @@ class _WelcomeMobileState extends State<WelcomeMobile> {
 
   void setCountDown() {
     final reduceSecondsBy = 1;
-    setState(() {
-      final seconds = otpDuration.inSeconds - reduceSecondsBy;
-      if (seconds < 0) {
-        countdownTimer!.cancel();
-      } else {
-        otpDuration = Duration(seconds: seconds);
-      }
-    });
+    if (this.mounted) {
+      setState(() {
+        final seconds = otpDuration.inSeconds - reduceSecondsBy;
+        if (seconds < 0) {
+          countdownTimer!.cancel();
+        } else {
+          otpDuration = Duration(seconds: seconds);
+        }
+      });
+    }
   }
 
   @override
@@ -315,7 +318,18 @@ class _WelcomeMobileState extends State<WelcomeMobile> {
                         }
                         if (seconds != '00') {
                           print(otpEntered);
+                          Navigator.pushAndRemoveUntil(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Dashboard()),
+                              // ModalRoute.withName("/MainScreen")
+                              ((route) => false));
                         }
+                      } else {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                              content: Text('Phone Number is not valid!')),
+                        );
                       }
                     },
                     child: Text(
