@@ -104,12 +104,18 @@ class _WelcomeMobileState extends State<WelcomeMobile> {
                 children: [
                   Padding(
                     padding: EdgeInsets.fromLTRB(20, 70, 0, 0),
-                    child: Text(
-                      'Hi ' + WelcomeName.welcomeName.toUpperCase() + ' !!',
-                      style: TextStyle(
-                          fontSize: 24,
-                          color: Color.fromARGB(255, 38, 36, 36),
-                          fontWeight: FontWeight.bold),
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 0.8,
+                      child: Text(
+                        'Hi ${WelcomeName.welcomeName.toUpperCase()} !!',
+                        style: TextStyle(
+                            fontSize: 24,
+                            color: Color.fromARGB(255, 38, 36, 36),
+                            fontWeight: FontWeight.bold),
+                        softWrap: false,
+                        maxLines: 1,
+                        overflow: TextOverflow.fade,
+                      ),
                     ),
                   ),
                 ],
