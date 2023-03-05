@@ -310,11 +310,11 @@ class _WelcomeMobileState extends State<WelcomeMobile> {
                           startTimer();
                           pressedTimer++;
                         }
-                        if (seconds != '00') {
-                          print(otpEntered);
-                        }
                         if (seconds == '00') {
                           print("Time is over");
+                        }
+                        if (seconds != '00') {
+                          print(otpEntered);
                         }
                       }
                     },
