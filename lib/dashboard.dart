@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-
 import 'drawer.dart';
+import 'notification.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -88,7 +88,13 @@ class _DashboardState extends State<Dashboard> {
                     color: Color.fromARGB(26, 39, 39, 39),
                   ),
                   child: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Notifications()),
+                            ((route) => true));
+                      },
                       icon: Icon(
                         Icons.notifications,
                         color: Colors.amber,

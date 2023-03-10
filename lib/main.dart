@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:mu_card/startscreen.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
+import 'dashboard.dart';
+
 void main() {
   runApp(MaterialApp(
     home: MyApp(),
@@ -16,7 +18,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return StartScreen(); //return to statefullwidget of MyScreen class
+    return Dashboard(); //return to statefullwidget of MyScreen class
   }
 
   static of(BuildContext context) {}

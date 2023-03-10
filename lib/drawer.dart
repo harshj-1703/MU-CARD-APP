@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:mu_card/editprofile.dart';
 import 'package:mu_card/login/welcomename.dart';
+
+import 'login/loginscreen.dart';
 
 class DrawerMenu extends StatefulWidget {
   const DrawerMenu({super.key});
@@ -166,7 +169,12 @@ class _DrawerMenuState extends State<DrawerMenu> {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(builder: (context) => EditProfile()),
+                        ((route) => true));
+                  },
                   style: ElevatedButton.styleFrom(
                     alignment: Alignment.centerLeft,
                     backgroundColor: Colors.transparent,
@@ -185,46 +193,46 @@ class _DrawerMenuState extends State<DrawerMenu> {
                 color: Color.fromARGB(82, 15, 2, 196),
                 height: 0.05,
               ),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    alignment: Alignment.centerLeft,
-                    backgroundColor: Colors.transparent,
-                    elevation: 0,
-                  ),
-                  child: Text(
-                    'Have a referral code?',
-                    style: TextStyle(
-                        fontSize: 17,
-                        fontWeight: FontWeight.bold,
-                        color: Color.fromARGB(255, 0, 2, 125)),
-                  ),
-                ),
-              ),
-              Divider(
-                color: Color.fromARGB(82, 15, 2, 196),
-                height: 0.05,
-              ),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    alignment: Alignment.centerLeft,
-                    backgroundColor: Colors.transparent,
-                    elevation: 0,
-                  ),
-                  child: Text(
-                    'Refer and earn',
-                    style: TextStyle(
-                        fontSize: 17,
-                        fontWeight: FontWeight.bold,
-                        color: Color.fromARGB(255, 0, 2, 125)),
-                  ),
-                ),
-              ),
+              // SizedBox(
+              //   width: double.infinity,
+              //   child: ElevatedButton(
+              //     onPressed: () {},
+              //     style: ElevatedButton.styleFrom(
+              //       alignment: Alignment.centerLeft,
+              //       backgroundColor: Colors.transparent,
+              //       elevation: 0,
+              //     ),
+              //     child: Text(
+              //       'Have a referral code?',
+              //       style: TextStyle(
+              //           fontSize: 17,
+              //           fontWeight: FontWeight.bold,
+              //           color: Color.fromARGB(255, 0, 2, 125)),
+              //     ),
+              //   ),
+              // ),
+              // Divider(
+              //   color: Color.fromARGB(82, 15, 2, 196),
+              //   height: 0.05,
+              // ),
+              // SizedBox(
+              //   width: double.infinity,
+              //   child: ElevatedButton(
+              //     onPressed: () {},
+              //     style: ElevatedButton.styleFrom(
+              //       alignment: Alignment.centerLeft,
+              //       backgroundColor: Colors.transparent,
+              //       elevation: 0,
+              //     ),
+              //     child: Text(
+              //       'Refer and earn',
+              //       style: TextStyle(
+              //           fontSize: 17,
+              //           fontWeight: FontWeight.bold,
+              //           color: Color.fromARGB(255, 0, 2, 125)),
+              //     ),
+              //   ),
+              // ),
               Divider(
                 color: Color.fromARGB(82, 15, 2, 196),
                 height: 0.05,
@@ -322,7 +330,12 @@ class _DrawerMenuState extends State<DrawerMenu> {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(builder: (context) => LoginScreen()),
+                        ((route) => false));
+                  },
                   style: ElevatedButton.styleFrom(
                     alignment: Alignment.centerLeft,
                     backgroundColor: Colors.transparent,
