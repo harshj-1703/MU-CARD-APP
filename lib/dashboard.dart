@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'drawer.dart';
-import 'notifications.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
