@@ -11,6 +11,8 @@ class Dashboard extends StatefulWidget {
   State<Dashboard> createState() => _DashboardState();
 }
 
+int pageNumber = 0;
+
 class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
@@ -102,6 +104,175 @@ class _DashboardState extends State<Dashboard> {
                       )),
                 ),
               ),
+            ],
+          ),
+          body: Column(
+            children: [
+              Expanded(child: Container()),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                      border:
+                          Border.all(color: Color.fromARGB(255, 27, 0, 136)),
+                      color: Color.fromARGB(55, 111, 255, 236),
+                      borderRadius: BorderRadius.circular(12)),
+                  height: 70,
+                  width: double.infinity,
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        if (pageNumber == 0) ...[
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  border: Border.all(
+                                      color: Color.fromARGB(255, 27, 0, 136)),
+                                  color: Colors.black,
+                                  borderRadius: BorderRadius.circular(12)),
+                              child: TextButton.icon(
+                                onPressed: () {},
+                                icon: Icon(
+                                  Icons.credit_card,
+                                  size: 30,
+                                  color: Colors.amber,
+                                ),
+                                label: Text(
+                                  'My Cards',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 16,
+                                      fontFamily: 'Times New Roman'),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ] else ...[
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.transparent,
+                                  borderRadius: BorderRadius.circular(12)),
+                              child: IconButton(
+                                onPressed: () {
+                                  setState(() {
+                                    pageNumber = 0;
+                                  });
+                                },
+                                icon: Icon(
+                                  Icons.credit_card,
+                                  size: 30,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                        if (pageNumber == 1) ...[
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  border: Border.all(
+                                      color: Color.fromARGB(255, 27, 0, 136)),
+                                  color: Colors.black,
+                                  borderRadius: BorderRadius.circular(12)),
+                              child: TextButton.icon(
+                                onPressed: () {},
+                                icon: Icon(
+                                  Icons.perm_contact_calendar_sharp,
+                                  size: 30,
+                                  color: Colors.amber,
+                                ),
+                                label: Text(
+                                  'Profiles',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 16,
+                                      fontFamily: 'Times New Roman'),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ] else ...[
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.transparent,
+                                  borderRadius: BorderRadius.circular(12)),
+                              child: IconButton(
+                                onPressed: () {
+                                  setState(() {
+                                    pageNumber = 1;
+                                  });
+                                },
+                                icon: Icon(
+                                  Icons.perm_contact_calendar_sharp,
+                                  size: 30,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                        if (pageNumber == 2) ...[
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  border: Border.all(
+                                      color: Color.fromARGB(255, 27, 0, 136)),
+                                  color: Colors.black,
+                                  borderRadius: BorderRadius.circular(12)),
+                              child: TextButton.icon(
+                                onPressed: () {},
+                                icon: Icon(
+                                  Icons.connect_without_contact,
+                                  size: 30,
+                                  color: Colors.amber,
+                                ),
+                                label: Text(
+                                  'Connection',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 16,
+                                      fontFamily: 'Times New Roman'),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ] else ...[
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.transparent,
+                                  borderRadius: BorderRadius.circular(12)),
+                              child: IconButton(
+                                onPressed: () {
+                                  setState(() {
+                                    pageNumber = 2;
+                                  });
+                                },
+                                icon: Icon(
+                                  Icons.connect_without_contact,
+                                  size: 30,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ],
+                    ),
+                  ),
+                ),
+              )
             ],
           ),
         ));
