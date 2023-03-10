@@ -1,17 +1,29 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:mu_card/connection.dart';
+import 'package:mu_card/mycards.dart';
+import 'package:mu_card/profiles.dart';
 import 'drawer.dart';
 import 'notifications.dart';
 
+int pageNumber = 0;
+
 class Dashboard extends StatefulWidget {
+  // int pageNumber = 0;
+  // set setPage(int number) {
+  //   pageNumber = number;
+  // }
+
+  // int get getPage {
+  //   return pageNumber;
+  // }
+
   const Dashboard({super.key});
 
   @override
   State<Dashboard> createState() => _DashboardState();
 }
-
-int pageNumber = 0;
 
 class _DashboardState extends State<Dashboard> {
   @override
@@ -24,7 +36,7 @@ class _DashboardState extends State<Dashboard> {
           end: Alignment.bottomCenter,
           // stops: [0.5, 0.5],
           colors: [
-            Color.fromARGB(255, 0, 255, 251),
+            Color.fromARGB(255, 50, 190, 255),
             Colors.white,
           ],
         )),
@@ -108,6 +120,15 @@ class _DashboardState extends State<Dashboard> {
           ),
           body: Column(
             children: [
+              if (pageNumber == 1) ...[
+                Profiles(),
+              ],
+              if (pageNumber == 2) ...[
+                Connection(),
+              ],
+              if (pageNumber == 0) ...[
+                MyCards(),
+              ],
               Expanded(child: Container()),
               Padding(
                 padding: const EdgeInsets.all(8.0),
