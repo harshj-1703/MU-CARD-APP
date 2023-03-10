@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_share/flutter_share.dart';
 import 'package:mu_card/dashboard.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:mu_card/qrcode.dart';
 
 class MyCards extends StatefulWidget {
   const MyCards({super.key});
@@ -351,7 +352,13 @@ class _MyCardsState extends State<MyCards> with SingleTickerProviderStateMixin {
                                             borderRadius:
                                                 BorderRadius.circular(50)),
                                         child: IconButton(
-                                            onPressed: () {},
+                                            onPressed: () {
+                                              Navigator.of(context)
+                                                  .push(MaterialPageRoute(
+                                                builder: (context) =>
+                                                    const QRViewExample(),
+                                              ));
+                                            },
                                             icon: Icon(
                                               Icons.qr_code_2,
                                               color: Colors.white,
