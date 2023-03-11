@@ -100,6 +100,117 @@ class _MyCardsState extends State<MyCards> with SingleTickerProviderStateMixin {
           });
     }
 
+    Future<void> linkNewCard() async {
+      await showDialog<void>(
+          context: context,
+          builder: (BuildContext context) {
+            return SimpleDialog(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
+              backgroundColor: Color.fromARGB(255, 255, 255, 255),
+              // title: const Text('Select Booking Type'),
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 5, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      IconButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          icon: Icon(
+                            Icons.close,
+                            color: Color.fromARGB(255, 0, 0, 0),
+                            size: 40,
+                          ))
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Row(
+                    children: [
+                      Text(
+                        'Label Your Card',
+                        style: TextStyle(
+                            fontSize: 18,
+                            fontFamily: 'Times New Roman',
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                  child: SizedBox(
+                    // height: 50,
+                    child: TextFormField(
+                      keyboardType: TextInputType.emailAddress,
+                      cursorColor: Colors.black,
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20,
+                          letterSpacing: 1.1,
+                          fontFamily: 'Times New Roman'),
+                      decoration: InputDecoration(
+                        counterText: '',
+                        contentPadding: EdgeInsets.fromLTRB(14, 5, 14, 5),
+                        // filled: true,
+                        // fillColor: Colors.white,
+                        border: OutlineInputBorder(
+                            // borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(10)),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Row(
+                    children: [
+                      Text(
+                        'Select Profile',
+                        style: TextStyle(
+                            fontSize: 18,
+                            fontFamily: 'Times New Roman',
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        height: 40,
+                        width: 80,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: Text(
+                            'Next',
+                            style: TextStyle(
+                                color: Colors.amberAccent,
+                                fontSize: 20,
+                                fontFamily: 'Times New Roman'),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Color.fromARGB(255, 20, 20, 20),
+                            foregroundColor: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            );
+          });
+    }
+
     return Column(
       children: [
         Padding(
@@ -477,10 +588,15 @@ class _MyCardsState extends State<MyCards> with SingleTickerProviderStateMixin {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Icon(
-                                  Icons.add_circle,
-                                  size: 70,
-                                  color: Colors.white,
+                                InkWell(
+                                  onTap: () {
+                                    linkNewCard();
+                                  },
+                                  child: Icon(
+                                    Icons.add_circle,
+                                    size: 70,
+                                    color: Colors.white,
+                                  ),
                                 )
                               ],
                             ),
@@ -494,7 +610,7 @@ class _MyCardsState extends State<MyCards> with SingleTickerProviderStateMixin {
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontFamily: 'Times New Roman',
-                                        fontSize: 24,
+                                        fontSize: 30,
                                         fontWeight: FontWeight.bold),
                                   )
                                 ],
