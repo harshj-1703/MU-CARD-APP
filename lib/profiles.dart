@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:mu_card/createbusinessprofile.dart';
 
 class Profiles extends StatefulWidget {
   const Profiles({super.key});
@@ -21,7 +22,7 @@ class _ProfilesState extends State<Profiles> {
             // title: const Text('Select Booking Type'),
             children: <Widget>[
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.fromLTRB(0, 0, 15, 0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
@@ -51,35 +52,46 @@ class _ProfilesState extends State<Profiles> {
                 style: TextStyle(color: Colors.black, fontSize: 15),
               )),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(15),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Column(
                       children: [
                         Row(
                           children: [
                             Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.all(3),
                               child: Column(
                                 children: [
                                   Container(
-                                    height: 70,
-                                    width: 70,
+                                    height: 60,
+                                    width: 60,
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(40),
                                         color: Colors.grey),
                                     child: IconButton(
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          Navigator.pushAndRemoveUntil(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      CreateBusinessProfile()),
+                                              ((route) => true));
+                                        },
                                         icon: Icon(
                                           Icons.business_center,
                                           size: 40,
                                         )),
                                   ),
-                                  Text(
-                                    'Business',
-                                    style: TextStyle(
-                                        fontFamily: 'Times New Roman',
-                                        fontSize: 15),
+                                  Padding(
+                                    padding: const EdgeInsets.all(2),
+                                    child: Text(
+                                      'Business',
+                                      style: TextStyle(
+                                          fontFamily: 'Times New Roman',
+                                          fontSize: 15),
+                                    ),
                                   ),
                                 ],
                               ),
@@ -89,12 +101,12 @@ class _ProfilesState extends State<Profiles> {
                         Row(
                           children: [
                             Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.all(3),
                               child: Column(
                                 children: [
                                   Container(
-                                    height: 70,
-                                    width: 70,
+                                    height: 60,
+                                    width: 60,
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(40),
                                         color: Colors.grey),
@@ -105,11 +117,14 @@ class _ProfilesState extends State<Profiles> {
                                           size: 40,
                                         )),
                                   ),
-                                  Text(
-                                    'LinkedIn',
-                                    style: TextStyle(
-                                        fontFamily: 'Times New Roman',
-                                        fontSize: 15),
+                                  Padding(
+                                    padding: const EdgeInsets.all(2),
+                                    child: Text(
+                                      'LinkedIn',
+                                      style: TextStyle(
+                                          fontFamily: 'Times New Roman',
+                                          fontSize: 15),
+                                    ),
                                   ),
                                 ],
                               ),
@@ -123,12 +138,12 @@ class _ProfilesState extends State<Profiles> {
                         Row(
                           children: [
                             Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.all(3),
                               child: Column(
                                 children: [
                                   Container(
-                                    height: 70,
-                                    width: 70,
+                                    height: 60,
+                                    width: 60,
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(40),
                                         color: Colors.grey),
@@ -139,11 +154,14 @@ class _ProfilesState extends State<Profiles> {
                                           size: 40,
                                         )),
                                   ),
-                                  Text(
-                                    'Personal',
-                                    style: TextStyle(
-                                        fontFamily: 'Times New Roman',
-                                        fontSize: 15),
+                                  Padding(
+                                    padding: const EdgeInsets.all(2),
+                                    child: Text(
+                                      'Personal',
+                                      style: TextStyle(
+                                          fontFamily: 'Times New Roman',
+                                          fontSize: 15),
+                                    ),
                                   ),
                                 ],
                               ),
@@ -153,12 +171,12 @@ class _ProfilesState extends State<Profiles> {
                         Row(
                           children: [
                             Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.all(3),
                               child: Column(
                                 children: [
                                   Container(
-                                    height: 70,
-                                    width: 70,
+                                    height: 60,
+                                    width: 60,
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(40),
                                         color: Colors.grey),
@@ -169,11 +187,14 @@ class _ProfilesState extends State<Profiles> {
                                           size: 40,
                                         )),
                                   ),
-                                  Text(
-                                    'YouTube',
-                                    style: TextStyle(
-                                        fontFamily: 'Times New Roman',
-                                        fontSize: 15),
+                                  Padding(
+                                    padding: const EdgeInsets.all(2),
+                                    child: Text(
+                                      'YouTube',
+                                      style: TextStyle(
+                                          fontFamily: 'Times New Roman',
+                                          fontSize: 15),
+                                    ),
                                   ),
                                 ],
                               ),
@@ -187,12 +208,12 @@ class _ProfilesState extends State<Profiles> {
                         Row(
                           children: [
                             Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.all(3),
                               child: Column(
                                 children: [
                                   Container(
-                                    height: 70,
-                                    width: 70,
+                                    height: 60,
+                                    width: 60,
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(40),
                                         color: Colors.grey),
@@ -203,11 +224,14 @@ class _ProfilesState extends State<Profiles> {
                                           size: 40,
                                         )),
                                   ),
-                                  Text(
-                                    'Instagram',
-                                    style: TextStyle(
-                                        fontFamily: 'Times New Roman',
-                                        fontSize: 15),
+                                  Padding(
+                                    padding: const EdgeInsets.all(2),
+                                    child: Text(
+                                      'Instagram',
+                                      style: TextStyle(
+                                          fontFamily: 'Times New Roman',
+                                          fontSize: 15),
+                                    ),
                                   ),
                                 ],
                               ),
@@ -217,12 +241,12 @@ class _ProfilesState extends State<Profiles> {
                         Row(
                           children: [
                             Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.all(3),
                               child: Column(
                                 children: [
                                   Container(
-                                    height: 70,
-                                    width: 70,
+                                    height: 60,
+                                    width: 60,
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(40),
                                         color: Colors.grey),
@@ -233,11 +257,14 @@ class _ProfilesState extends State<Profiles> {
                                           size: 40,
                                         )),
                                   ),
-                                  Text(
-                                    'Spotify',
-                                    style: TextStyle(
-                                        fontFamily: 'Times New Roman',
-                                        fontSize: 15),
+                                  Padding(
+                                    padding: const EdgeInsets.all(2),
+                                    child: Text(
+                                      'Spotify',
+                                      style: TextStyle(
+                                          fontFamily: 'Times New Roman',
+                                          fontSize: 15),
+                                    ),
                                   ),
                                 ],
                               ),

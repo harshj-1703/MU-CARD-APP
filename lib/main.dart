@@ -6,6 +6,7 @@ import 'dashboard.dart';
 
 void main() {
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     home: MyApp(),
     title: 'CARD APP',
     theme: ThemeData(primarySwatch: Colors.cyan),
