@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:mu_card/addinstaprofile.dart';
+import 'package:mu_card/addlinkedinprofile.dart';
+import 'package:mu_card/addsocialprofile.dart';
+import 'package:mu_card/addspotifyprofile.dart';
+import 'package:mu_card/addyoutubeprofile.dart';
 import 'package:mu_card/createbusinessprofile.dart';
 
 class Profiles extends StatefulWidget {
@@ -111,7 +116,14 @@ class _ProfilesState extends State<Profiles> {
                                         borderRadius: BorderRadius.circular(40),
                                         color: Colors.grey),
                                     child: IconButton(
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          Navigator.pushAndRemoveUntil(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      AddLinkedInProfile()),
+                                              ((route) => true));
+                                        },
                                         icon: Icon(
                                           FontAwesomeIcons.linkedin,
                                           size: 40,
@@ -148,7 +160,14 @@ class _ProfilesState extends State<Profiles> {
                                         borderRadius: BorderRadius.circular(40),
                                         color: Colors.grey),
                                     child: IconButton(
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          Navigator.pushAndRemoveUntil(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      AddSocialProfile()),
+                                              ((route) => true));
+                                        },
                                         icon: Icon(
                                           Icons.person,
                                           size: 40,
@@ -181,7 +200,14 @@ class _ProfilesState extends State<Profiles> {
                                         borderRadius: BorderRadius.circular(40),
                                         color: Colors.grey),
                                     child: IconButton(
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          Navigator.pushAndRemoveUntil(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      AddYoutubeProfile()),
+                                              ((route) => true));
+                                        },
                                         icon: Icon(
                                           FontAwesomeIcons.youtube,
                                           size: 40,
@@ -218,7 +244,14 @@ class _ProfilesState extends State<Profiles> {
                                         borderRadius: BorderRadius.circular(40),
                                         color: Colors.grey),
                                     child: IconButton(
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          Navigator.pushAndRemoveUntil(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      AddInstaProfile()),
+                                              ((route) => true));
+                                        },
                                         icon: Icon(
                                           FontAwesomeIcons.instagram,
                                           size: 40,
@@ -251,7 +284,14 @@ class _ProfilesState extends State<Profiles> {
                                         borderRadius: BorderRadius.circular(40),
                                         color: Colors.grey),
                                     child: IconButton(
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          Navigator.pushAndRemoveUntil(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      AddSpotifyProfile()),
+                                              ((route) => true));
+                                        },
                                         icon: Icon(
                                           FontAwesomeIcons.spotify,
                                           size: 40,
