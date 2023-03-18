@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:mu_card/addemailbusiness.dart';
 import 'package:mu_card/addmobilenumbersbusiness.dart';
 
 class CreateBusinessProfile extends StatefulWidget {
@@ -448,120 +449,469 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
           });
     }
 
-    // Future<void> _addContacts() async {
-    //   List<String> _mobileNumbers = [];
+    //add edu menu
+    Future<void> _addedu() async {
+      await showDialog<void>(
+          context: context,
+          builder: (BuildContext context) {
+            return SimpleDialog(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
+              backgroundColor: Color.fromARGB(255, 255, 255, 255),
+              // title: const Text('Select Booking Type'),
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 5, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
+                        child: Text(
+                          'Add Education',
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 0, 15, 178),
+                              fontFamily: 'Times New Roman',
+                              fontSize: 27),
+                        ),
+                      ),
+                      Expanded(child: Container()),
+                      IconButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          icon: Icon(
+                            Icons.close,
+                            color: Color.fromARGB(255, 0, 0, 0),
+                            size: 35,
+                          ))
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                  child: SizedBox(
+                    // height: 50,
+                    child: TextFormField(
+                      maxLines: 7,
+                      keyboardType: TextInputType.emailAddress,
+                      cursorColor: Colors.black,
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 15,
+                          letterSpacing: 1.1,
+                          fontFamily: 'Times New Roman'),
+                      decoration: InputDecoration(
+                        hintText: 'Add Education Here',
+                        counterText: '',
+                        contentPadding: EdgeInsets.fromLTRB(14, 5, 14, 5),
+                        // filled: true,
+                        // fillColor: Colors.white,
+                        border: OutlineInputBorder(
+                            // borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(10)),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: Text('Remove'),
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                          minimumSize: Size(50, 30),
+                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        height: 40,
+                        width: 80,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: Text(
+                            'Save',
+                            style: TextStyle(
+                                color: Colors.amberAccent,
+                                fontSize: 20,
+                                fontFamily: 'Times New Roman'),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Color.fromARGB(255, 20, 20, 20),
+                            foregroundColor: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            );
+          });
+    }
 
-    //   void _addMobileNumberField() {
-    //     setState(() {
-    //       _mobileNumbers.add("");
-    //     });
-    //   }
+    //add exp menu
+    Future<void> _addExp() async {
+      await showDialog<void>(
+          context: context,
+          builder: (BuildContext context) {
+            return SimpleDialog(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
+              backgroundColor: Color.fromARGB(255, 255, 255, 255),
+              // title: const Text('Select Booking Type'),
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 5, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
+                        child: Text(
+                          'Add Experience',
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 0, 15, 178),
+                              fontFamily: 'Times New Roman',
+                              fontSize: 27),
+                        ),
+                      ),
+                      Expanded(child: Container()),
+                      IconButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          icon: Icon(
+                            Icons.close,
+                            color: Color.fromARGB(255, 0, 0, 0),
+                            size: 35,
+                          ))
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                  child: SizedBox(
+                    // height: 50,
+                    child: TextFormField(
+                      maxLines: 7,
+                      keyboardType: TextInputType.emailAddress,
+                      cursorColor: Colors.black,
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 15,
+                          letterSpacing: 1.1,
+                          fontFamily: 'Times New Roman'),
+                      decoration: InputDecoration(
+                        hintText: 'Add Experience Here',
+                        counterText: '',
+                        contentPadding: EdgeInsets.fromLTRB(14, 5, 14, 5),
+                        // filled: true,
+                        // fillColor: Colors.white,
+                        border: OutlineInputBorder(
+                            // borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(10)),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: Text('Remove'),
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                          minimumSize: Size(50, 30),
+                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        height: 40,
+                        width: 80,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: Text(
+                            'Save',
+                            style: TextStyle(
+                                color: Colors.amberAccent,
+                                fontSize: 20,
+                                fontFamily: 'Times New Roman'),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Color.fromARGB(255, 20, 20, 20),
+                            foregroundColor: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            );
+          });
+    }
 
-    //   void _removeMobileNumberField(int index) {
-    //     setState(() {
-    //       _mobileNumbers.removeAt(index);
-    //     });
-    //   }
+    //add hobby menu
+    Future<void> _addhobby() async {
+      await showDialog<void>(
+          context: context,
+          builder: (BuildContext context) {
+            return SimpleDialog(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
+              backgroundColor: Color.fromARGB(255, 255, 255, 255),
+              // title: const Text('Select Booking Type'),
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 5, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
+                        child: Text(
+                          'Add Hobby',
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 0, 15, 178),
+                              fontFamily: 'Times New Roman',
+                              fontSize: 27),
+                        ),
+                      ),
+                      Expanded(child: Container()),
+                      IconButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          icon: Icon(
+                            Icons.close,
+                            color: Color.fromARGB(255, 0, 0, 0),
+                            size: 35,
+                          ))
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                  child: SizedBox(
+                    // height: 50,
+                    child: TextFormField(
+                      maxLines: 7,
+                      keyboardType: TextInputType.emailAddress,
+                      cursorColor: Colors.black,
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 15,
+                          letterSpacing: 1.1,
+                          fontFamily: 'Times New Roman'),
+                      decoration: InputDecoration(
+                        hintText: 'Add Hobby Here',
+                        counterText: '',
+                        contentPadding: EdgeInsets.fromLTRB(14, 5, 14, 5),
+                        // filled: true,
+                        // fillColor: Colors.white,
+                        border: OutlineInputBorder(
+                            // borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(10)),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: Text('Remove'),
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                          minimumSize: Size(50, 30),
+                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        height: 40,
+                        width: 80,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: Text(
+                            'Save',
+                            style: TextStyle(
+                                color: Colors.amberAccent,
+                                fontSize: 20,
+                                fontFamily: 'Times New Roman'),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Color.fromARGB(255, 20, 20, 20),
+                            foregroundColor: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            );
+          });
+    }
 
-    //   void _updateMobileNumberField(int index, String value) {
-    //     setState(() {
-    //       _mobileNumbers[index] = value;
-    //     });
-    //   }
-
-    //add contacts menu
-    //   await showDialog<void>(
-    //       context: context,
-    //       builder: (BuildContext context) {
-    //         return Dialog(
-    //           backgroundColor: Colors.transparent,
-    //           child: Container(
-    //             width: MediaQuery.of(context).size.width,
-    //             height: MediaQuery.of(context).size.height,
-    //             decoration: BoxDecoration(
-    //                 color: Colors.white,
-    //                 borderRadius: BorderRadius.circular(20)),
-    //             // child: YourDialogContent(),
-    //             child: Column(
-    //               children: [
-    //                 Padding(
-    //                   padding: const EdgeInsets.fromLTRB(0, 0, 5, 0),
-    //                   child: Row(
-    //                     mainAxisAlignment: MainAxisAlignment.center,
-    //                     children: [
-    //                       Padding(
-    //                         padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
-    //                         child: Text(
-    //                           'Add Contacts',
-    //                           style: TextStyle(
-    //                               color: Color.fromARGB(255, 0, 15, 178),
-    //                               fontFamily: 'Times New Roman',
-    //                               fontSize: 27),
-    //                         ),
-    //                       ),
-    //                       Expanded(child: Container()),
-    //                       IconButton(
-    //                           onPressed: () {
-    //                             Navigator.of(context).pop();
-    //                           },
-    //                           icon: Icon(
-    //                             Icons.close,
-    //                             color: Color.fromARGB(255, 0, 0, 0),
-    //                             size: 35,
-    //                           ))
-    //                     ],
-    //                   ),
-    //                 ),
-    //                 Padding(
-    //                   padding: const EdgeInsets.fromLTRB(0, 0, 7, 0),
-    //                   child: Row(
-    //                     mainAxisAlignment: MainAxisAlignment.end,
-    //                     children: [
-    //                       TextButton.icon(
-    //                           onPressed: _addMobileNumberField,
-    //                           icon: Icon(Icons.add),
-    //                           label: Text('Add New')),
-    //                     ],
-    //                   ),
-    //                 ),
-    //                 Divider(),
-    //                 SingleChildScrollView(
-    //                   child: Column(
-    //                     children: [
-    //                       ..._mobileNumbers.asMap().entries.map((entry) {
-    //                         int index = entry.key;
-    //                         String mobileNumber = entry.value;
-    //                         return Row(
-    //                           children: [
-    //                             Expanded(
-    //                               child: TextFormField(
-    //                                 initialValue: mobileNumber,
-    //                                 decoration: InputDecoration(
-    //                                   hintText: "Enter mobile number",
-    //                                 ),
-    //                                 onChanged: (value) {
-    //                                   _updateMobileNumberField(index, value);
-    //                                 },
-    //                               ),
-    //                             ),
-    //                             IconButton(
-    //                               icon: Icon(Icons.remove),
-    //                               onPressed: () {
-    //                                 _removeMobileNumberField(index);
-    //                               },
-    //                             ),
-    //                           ],
-    //                         );
-    //                       }).toList(),
-    //                     ],
-    //                   ),
-    //                 ),
-    //               ],
-    //             ),
-    //           ),
-    //         );
-    //       });
-    // }
+    //add info menu
+    Future<void> _addinfo() async {
+      await showDialog<void>(
+          context: context,
+          builder: (BuildContext context) {
+            return SimpleDialog(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
+              backgroundColor: Color.fromARGB(255, 255, 255, 255),
+              // title: const Text('Select Booking Type'),
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 5, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
+                        child: Text(
+                          'Add Info',
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 0, 15, 178),
+                              fontFamily: 'Times New Roman',
+                              fontSize: 27),
+                        ),
+                      ),
+                      Expanded(child: Container()),
+                      IconButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          icon: Icon(
+                            Icons.close,
+                            color: Color.fromARGB(255, 0, 0, 0),
+                            size: 35,
+                          ))
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                  child: SizedBox(
+                    // height: 50,
+                    child: TextFormField(
+                      maxLines: 7,
+                      keyboardType: TextInputType.emailAddress,
+                      cursorColor: Colors.black,
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 15,
+                          letterSpacing: 1.1,
+                          fontFamily: 'Times New Roman'),
+                      decoration: InputDecoration(
+                        hintText: 'Add Info Here',
+                        counterText: '',
+                        contentPadding: EdgeInsets.fromLTRB(14, 5, 14, 5),
+                        // filled: true,
+                        // fillColor: Colors.white,
+                        border: OutlineInputBorder(
+                            // borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(10)),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: Text('Remove'),
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                          minimumSize: Size(50, 30),
+                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        height: 40,
+                        width: 80,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: Text(
+                            'Save',
+                            style: TextStyle(
+                                color: Colors.amberAccent,
+                                fontSize: 20,
+                                fontFamily: 'Times New Roman'),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Color.fromARGB(255, 20, 20, 20),
+                            foregroundColor: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            );
+          });
+    }
 
     //add services menu
     Future<void> _addservices(context) async {
@@ -618,6 +968,1704 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                           fontFamily: 'Times New Roman'),
                       decoration: InputDecoration(
                         hintText: 'Add Services Here',
+                        counterText: '',
+                        contentPadding: EdgeInsets.fromLTRB(14, 5, 14, 5),
+                        // filled: true,
+                        // fillColor: Colors.white,
+                        border: OutlineInputBorder(
+                            // borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(10)),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: Text('Remove'),
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                          minimumSize: Size(50, 30),
+                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        height: 40,
+                        width: 80,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: Text(
+                            'Save',
+                            style: TextStyle(
+                                color: Colors.amberAccent,
+                                fontSize: 20,
+                                fontFamily: 'Times New Roman'),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Color.fromARGB(255, 20, 20, 20),
+                            foregroundColor: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            );
+          });
+    }
+
+    //add address menu
+    Future<void> _addAddress(context) async {
+      await showDialog<void>(
+          context: context,
+          builder: (BuildContext context) {
+            return SimpleDialog(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
+              backgroundColor: Color.fromARGB(255, 255, 255, 255),
+              // title: const Text('Select Booking Type'),
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 5, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
+                        child: Text(
+                          'Add Address',
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 0, 15, 178),
+                              fontFamily: 'Times New Roman',
+                              fontSize: 27),
+                        ),
+                      ),
+                      Expanded(child: Container()),
+                      IconButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          icon: Icon(
+                            Icons.close,
+                            color: Color.fromARGB(255, 0, 0, 0),
+                            size: 35,
+                          ))
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                  child: SizedBox(
+                    // height: 50,
+                    child: TextFormField(
+                      keyboardType: TextInputType.emailAddress,
+                      cursorColor: Colors.black,
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 15,
+                          letterSpacing: 1.1,
+                          fontFamily: 'Times New Roman'),
+                      decoration: InputDecoration(
+                        hintText: 'Add House Number',
+                        counterText: '',
+                        contentPadding: EdgeInsets.fromLTRB(14, 5, 14, 5),
+                        // filled: true,
+                        // fillColor: Colors.white,
+                        border: OutlineInputBorder(
+                            // borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(10)),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                  child: SizedBox(
+                    // height: 50,
+                    child: TextFormField(
+                      keyboardType: TextInputType.emailAddress,
+                      cursorColor: Colors.black,
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 15,
+                          letterSpacing: 1.1,
+                          fontFamily: 'Times New Roman'),
+                      decoration: InputDecoration(
+                        hintText: 'Add City',
+                        counterText: '',
+                        contentPadding: EdgeInsets.fromLTRB(14, 5, 14, 5),
+                        // filled: true,
+                        // fillColor: Colors.white,
+                        border: OutlineInputBorder(
+                            // borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(10)),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                  child: SizedBox(
+                    // height: 50,
+                    child: TextFormField(
+                      keyboardType: TextInputType.emailAddress,
+                      cursorColor: Colors.black,
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 15,
+                          letterSpacing: 1.1,
+                          fontFamily: 'Times New Roman'),
+                      decoration: InputDecoration(
+                        hintText: 'Add State',
+                        counterText: '',
+                        contentPadding: EdgeInsets.fromLTRB(14, 5, 14, 5),
+                        // filled: true,
+                        // fillColor: Colors.white,
+                        border: OutlineInputBorder(
+                            // borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(10)),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                  child: SizedBox(
+                    // height: 50,
+                    child: TextFormField(
+                      keyboardType: TextInputType.emailAddress,
+                      cursorColor: Colors.black,
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 15,
+                          letterSpacing: 1.1,
+                          fontFamily: 'Times New Roman'),
+                      decoration: InputDecoration(
+                        hintText: 'Add Country',
+                        counterText: '',
+                        contentPadding: EdgeInsets.fromLTRB(14, 5, 14, 5),
+                        // filled: true,
+                        // fillColor: Colors.white,
+                        border: OutlineInputBorder(
+                            // borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(10)),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: Text('Remove'),
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                          minimumSize: Size(50, 30),
+                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        height: 40,
+                        width: 80,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: Text(
+                            'Save',
+                            style: TextStyle(
+                                color: Colors.amberAccent,
+                                fontSize: 20,
+                                fontFamily: 'Times New Roman'),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Color.fromARGB(255, 20, 20, 20),
+                            foregroundColor: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            );
+          });
+    }
+
+    //whatsapp add
+    Future<void> _addwhatsapp() async {
+      await showDialog<void>(
+          context: context,
+          builder: (BuildContext context) {
+            return SimpleDialog(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
+              backgroundColor: Color.fromARGB(255, 255, 255, 255),
+              // title: const Text('Select Booking Type'),
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 5, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
+                        child: Text(
+                          'Add WhatsApp',
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 0, 15, 178),
+                              fontFamily: 'Times New Roman',
+                              fontSize: 27),
+                        ),
+                      ),
+                      Expanded(child: Container()),
+                      IconButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          icon: Icon(
+                            Icons.close,
+                            color: Color.fromARGB(255, 0, 0, 0),
+                            size: 35,
+                          ))
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                  child: SizedBox(
+                    // height: 50,
+                    child: TextFormField(
+                      // maxLines: 7,
+                      keyboardType: TextInputType.number,
+                      cursorColor: Colors.black,
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 15,
+                          letterSpacing: 1.1,
+                          fontFamily: 'Times New Roman'),
+                      decoration: InputDecoration(
+                        hintText: 'Add WhatsApp',
+                        counterText: '',
+                        contentPadding: EdgeInsets.fromLTRB(14, 5, 14, 5),
+                        // filled: true,
+                        // fillColor: Colors.white,
+                        border: OutlineInputBorder(
+                            // borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(10)),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: Text('Remove'),
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                          minimumSize: Size(50, 30),
+                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        height: 40,
+                        width: 80,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: Text(
+                            'Save',
+                            style: TextStyle(
+                                color: Colors.amberAccent,
+                                fontSize: 20,
+                                fontFamily: 'Times New Roman'),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Color.fromARGB(255, 20, 20, 20),
+                            foregroundColor: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            );
+          });
+    }
+
+    //instagram add
+    Future<void> _addInstagram() async {
+      await showDialog<void>(
+          context: context,
+          builder: (BuildContext context) {
+            return SimpleDialog(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
+              backgroundColor: Color.fromARGB(255, 255, 255, 255),
+              // title: const Text('Select Booking Type'),
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 5, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
+                        child: Text(
+                          'Add Instagram',
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 0, 15, 178),
+                              fontFamily: 'Times New Roman',
+                              fontSize: 27),
+                        ),
+                      ),
+                      Expanded(child: Container()),
+                      IconButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          icon: Icon(
+                            Icons.close,
+                            color: Color.fromARGB(255, 0, 0, 0),
+                            size: 35,
+                          ))
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                  child: SizedBox(
+                    // height: 50,
+                    child: TextFormField(
+                      // maxLines: 7,
+                      keyboardType: TextInputType.number,
+                      cursorColor: Colors.black,
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 15,
+                          letterSpacing: 1.1,
+                          fontFamily: 'Times New Roman'),
+                      decoration: InputDecoration(
+                        hintText: 'Add Instagram',
+                        counterText: '',
+                        contentPadding: EdgeInsets.fromLTRB(14, 5, 14, 5),
+                        // filled: true,
+                        // fillColor: Colors.white,
+                        border: OutlineInputBorder(
+                            // borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(10)),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: Text('Remove'),
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                          minimumSize: Size(50, 30),
+                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        height: 40,
+                        width: 80,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: Text(
+                            'Save',
+                            style: TextStyle(
+                                color: Colors.amberAccent,
+                                fontSize: 20,
+                                fontFamily: 'Times New Roman'),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Color.fromARGB(255, 20, 20, 20),
+                            foregroundColor: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            );
+          });
+    }
+
+    //Facebook add
+    Future<void> _addFacebook() async {
+      await showDialog<void>(
+          context: context,
+          builder: (BuildContext context) {
+            return SimpleDialog(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
+              backgroundColor: Color.fromARGB(255, 255, 255, 255),
+              // title: const Text('Select Booking Type'),
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 5, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
+                        child: Text(
+                          'Add Facebook',
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 0, 15, 178),
+                              fontFamily: 'Times New Roman',
+                              fontSize: 27),
+                        ),
+                      ),
+                      Expanded(child: Container()),
+                      IconButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          icon: Icon(
+                            Icons.close,
+                            color: Color.fromARGB(255, 0, 0, 0),
+                            size: 35,
+                          ))
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                  child: SizedBox(
+                    // height: 50,
+                    child: TextFormField(
+                      // maxLines: 7,
+                      keyboardType: TextInputType.number,
+                      cursorColor: Colors.black,
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 15,
+                          letterSpacing: 1.1,
+                          fontFamily: 'Times New Roman'),
+                      decoration: InputDecoration(
+                        hintText: 'Add Facebook',
+                        counterText: '',
+                        contentPadding: EdgeInsets.fromLTRB(14, 5, 14, 5),
+                        // filled: true,
+                        // fillColor: Colors.white,
+                        border: OutlineInputBorder(
+                            // borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(10)),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: Text('Remove'),
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                          minimumSize: Size(50, 30),
+                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        height: 40,
+                        width: 80,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: Text(
+                            'Save',
+                            style: TextStyle(
+                                color: Colors.amberAccent,
+                                fontSize: 20,
+                                fontFamily: 'Times New Roman'),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Color.fromARGB(255, 20, 20, 20),
+                            foregroundColor: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            );
+          });
+    }
+
+    //linkedin add
+    Future<void> _addLinkedin() async {
+      await showDialog<void>(
+          context: context,
+          builder: (BuildContext context) {
+            return SimpleDialog(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
+              backgroundColor: Color.fromARGB(255, 255, 255, 255),
+              // title: const Text('Select Booking Type'),
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 5, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
+                        child: Text(
+                          'Add LinkedIn',
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 0, 15, 178),
+                              fontFamily: 'Times New Roman',
+                              fontSize: 27),
+                        ),
+                      ),
+                      Expanded(child: Container()),
+                      IconButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          icon: Icon(
+                            Icons.close,
+                            color: Color.fromARGB(255, 0, 0, 0),
+                            size: 35,
+                          ))
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                  child: SizedBox(
+                    // height: 50,
+                    child: TextFormField(
+                      // maxLines: 7,
+                      keyboardType: TextInputType.number,
+                      cursorColor: Colors.black,
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 15,
+                          letterSpacing: 1.1,
+                          fontFamily: 'Times New Roman'),
+                      decoration: InputDecoration(
+                        hintText: 'Add LinkedIn',
+                        counterText: '',
+                        contentPadding: EdgeInsets.fromLTRB(14, 5, 14, 5),
+                        // filled: true,
+                        // fillColor: Colors.white,
+                        border: OutlineInputBorder(
+                            // borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(10)),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: Text('Remove'),
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                          minimumSize: Size(50, 30),
+                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        height: 40,
+                        width: 80,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: Text(
+                            'Save',
+                            style: TextStyle(
+                                color: Colors.amberAccent,
+                                fontSize: 20,
+                                fontFamily: 'Times New Roman'),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Color.fromARGB(255, 20, 20, 20),
+                            foregroundColor: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            );
+          });
+    }
+
+    //Twitter add
+    Future<void> _addTwitter() async {
+      await showDialog<void>(
+          context: context,
+          builder: (BuildContext context) {
+            return SimpleDialog(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
+              backgroundColor: Color.fromARGB(255, 255, 255, 255),
+              // title: const Text('Select Booking Type'),
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 5, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
+                        child: Text(
+                          'Add Twitter',
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 0, 15, 178),
+                              fontFamily: 'Times New Roman',
+                              fontSize: 27),
+                        ),
+                      ),
+                      Expanded(child: Container()),
+                      IconButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          icon: Icon(
+                            Icons.close,
+                            color: Color.fromARGB(255, 0, 0, 0),
+                            size: 35,
+                          ))
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                  child: SizedBox(
+                    // height: 50,
+                    child: TextFormField(
+                      // maxLines: 7,
+                      keyboardType: TextInputType.number,
+                      cursorColor: Colors.black,
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 15,
+                          letterSpacing: 1.1,
+                          fontFamily: 'Times New Roman'),
+                      decoration: InputDecoration(
+                        hintText: 'Add Twitter',
+                        counterText: '',
+                        contentPadding: EdgeInsets.fromLTRB(14, 5, 14, 5),
+                        // filled: true,
+                        // fillColor: Colors.white,
+                        border: OutlineInputBorder(
+                            // borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(10)),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: Text('Remove'),
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                          minimumSize: Size(50, 30),
+                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        height: 40,
+                        width: 80,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: Text(
+                            'Save',
+                            style: TextStyle(
+                                color: Colors.amberAccent,
+                                fontSize: 20,
+                                fontFamily: 'Times New Roman'),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Color.fromARGB(255, 20, 20, 20),
+                            foregroundColor: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            );
+          });
+    }
+
+    //skype add
+    Future<void> _addSkype() async {
+      await showDialog<void>(
+          context: context,
+          builder: (BuildContext context) {
+            return SimpleDialog(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
+              backgroundColor: Color.fromARGB(255, 255, 255, 255),
+              // title: const Text('Select Booking Type'),
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 5, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
+                        child: Text(
+                          'Add Skype',
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 0, 15, 178),
+                              fontFamily: 'Times New Roman',
+                              fontSize: 27),
+                        ),
+                      ),
+                      Expanded(child: Container()),
+                      IconButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          icon: Icon(
+                            Icons.close,
+                            color: Color.fromARGB(255, 0, 0, 0),
+                            size: 35,
+                          ))
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                  child: SizedBox(
+                    // height: 50,
+                    child: TextFormField(
+                      // maxLines: 7,
+                      keyboardType: TextInputType.number,
+                      cursorColor: Colors.black,
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 15,
+                          letterSpacing: 1.1,
+                          fontFamily: 'Times New Roman'),
+                      decoration: InputDecoration(
+                        hintText: 'Add Skype',
+                        counterText: '',
+                        contentPadding: EdgeInsets.fromLTRB(14, 5, 14, 5),
+                        // filled: true,
+                        // fillColor: Colors.white,
+                        border: OutlineInputBorder(
+                            // borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(10)),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: Text('Remove'),
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                          minimumSize: Size(50, 30),
+                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        height: 40,
+                        width: 80,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: Text(
+                            'Save',
+                            style: TextStyle(
+                                color: Colors.amberAccent,
+                                fontSize: 20,
+                                fontFamily: 'Times New Roman'),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Color.fromARGB(255, 20, 20, 20),
+                            foregroundColor: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            );
+          });
+    }
+
+    //gpay add
+    Future<void> _addGpay() async {
+      await showDialog<void>(
+          context: context,
+          builder: (BuildContext context) {
+            return SimpleDialog(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
+              backgroundColor: Color.fromARGB(255, 255, 255, 255),
+              // title: const Text('Select Booking Type'),
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 5, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
+                        child: Text(
+                          'Add GPay',
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 0, 15, 178),
+                              fontFamily: 'Times New Roman',
+                              fontSize: 27),
+                        ),
+                      ),
+                      Expanded(child: Container()),
+                      IconButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          icon: Icon(
+                            Icons.close,
+                            color: Color.fromARGB(255, 0, 0, 0),
+                            size: 35,
+                          ))
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                  child: SizedBox(
+                    // height: 50,
+                    child: TextFormField(
+                      // maxLines: 7,
+                      keyboardType: TextInputType.number,
+                      cursorColor: Colors.black,
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 15,
+                          letterSpacing: 1.1,
+                          fontFamily: 'Times New Roman'),
+                      decoration: InputDecoration(
+                        hintText: 'Add GPay',
+                        counterText: '',
+                        contentPadding: EdgeInsets.fromLTRB(14, 5, 14, 5),
+                        // filled: true,
+                        // fillColor: Colors.white,
+                        border: OutlineInputBorder(
+                            // borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(10)),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: Text('Remove'),
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                          minimumSize: Size(50, 30),
+                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        height: 40,
+                        width: 80,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: Text(
+                            'Save',
+                            style: TextStyle(
+                                color: Colors.amberAccent,
+                                fontSize: 20,
+                                fontFamily: 'Times New Roman'),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Color.fromARGB(255, 20, 20, 20),
+                            foregroundColor: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            );
+          });
+    }
+
+    //paytm add
+    Future<void> _addPaytm() async {
+      await showDialog<void>(
+          context: context,
+          builder: (BuildContext context) {
+            return SimpleDialog(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
+              backgroundColor: Color.fromARGB(255, 255, 255, 255),
+              // title: const Text('Select Booking Type'),
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 5, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
+                        child: Text(
+                          'Add Paytm',
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 0, 15, 178),
+                              fontFamily: 'Times New Roman',
+                              fontSize: 27),
+                        ),
+                      ),
+                      Expanded(child: Container()),
+                      IconButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          icon: Icon(
+                            Icons.close,
+                            color: Color.fromARGB(255, 0, 0, 0),
+                            size: 35,
+                          ))
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                  child: SizedBox(
+                    // height: 50,
+                    child: TextFormField(
+                      // maxLines: 7,
+                      keyboardType: TextInputType.number,
+                      cursorColor: Colors.black,
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 15,
+                          letterSpacing: 1.1,
+                          fontFamily: 'Times New Roman'),
+                      decoration: InputDecoration(
+                        hintText: 'Add Paytm',
+                        counterText: '',
+                        contentPadding: EdgeInsets.fromLTRB(14, 5, 14, 5),
+                        // filled: true,
+                        // fillColor: Colors.white,
+                        border: OutlineInputBorder(
+                            // borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(10)),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: Text('Remove'),
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                          minimumSize: Size(50, 30),
+                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        height: 40,
+                        width: 80,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: Text(
+                            'Save',
+                            style: TextStyle(
+                                color: Colors.amberAccent,
+                                fontSize: 20,
+                                fontFamily: 'Times New Roman'),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Color.fromARGB(255, 20, 20, 20),
+                            foregroundColor: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            );
+          });
+    }
+
+    //website add
+    Future<void> _addWebsite() async {
+      await showDialog<void>(
+          context: context,
+          builder: (BuildContext context) {
+            return SimpleDialog(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
+              backgroundColor: Color.fromARGB(255, 255, 255, 255),
+              // title: const Text('Select Booking Type'),
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 5, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
+                        child: Text(
+                          'Add Website',
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 0, 15, 178),
+                              fontFamily: 'Times New Roman',
+                              fontSize: 27),
+                        ),
+                      ),
+                      Expanded(child: Container()),
+                      IconButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          icon: Icon(
+                            Icons.close,
+                            color: Color.fromARGB(255, 0, 0, 0),
+                            size: 35,
+                          ))
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                  child: SizedBox(
+                    // height: 50,
+                    child: TextFormField(
+                      // maxLines: 7,
+                      keyboardType: TextInputType.number,
+                      cursorColor: Colors.black,
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 15,
+                          letterSpacing: 1.1,
+                          fontFamily: 'Times New Roman'),
+                      decoration: InputDecoration(
+                        hintText: 'Add Website Link',
+                        counterText: '',
+                        contentPadding: EdgeInsets.fromLTRB(14, 5, 14, 5),
+                        // filled: true,
+                        // fillColor: Colors.white,
+                        border: OutlineInputBorder(
+                            // borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(10)),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: Text('Remove'),
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                          minimumSize: Size(50, 30),
+                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        height: 40,
+                        width: 80,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: Text(
+                            'Save',
+                            style: TextStyle(
+                                color: Colors.amberAccent,
+                                fontSize: 20,
+                                fontFamily: 'Times New Roman'),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Color.fromARGB(255, 20, 20, 20),
+                            foregroundColor: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            );
+          });
+    }
+
+    //drive add
+    Future<void> _addDrive() async {
+      await showDialog<void>(
+          context: context,
+          builder: (BuildContext context) {
+            return SimpleDialog(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
+              backgroundColor: Color.fromARGB(255, 255, 255, 255),
+              // title: const Text('Select Booking Type'),
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 5, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
+                        child: Text(
+                          'Add Drive',
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 0, 15, 178),
+                              fontFamily: 'Times New Roman',
+                              fontSize: 27),
+                        ),
+                      ),
+                      Expanded(child: Container()),
+                      IconButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          icon: Icon(
+                            Icons.close,
+                            color: Color.fromARGB(255, 0, 0, 0),
+                            size: 35,
+                          ))
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                  child: SizedBox(
+                    // height: 50,
+                    child: TextFormField(
+                      // maxLines: 7,
+                      keyboardType: TextInputType.number,
+                      cursorColor: Colors.black,
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 15,
+                          letterSpacing: 1.1,
+                          fontFamily: 'Times New Roman'),
+                      decoration: InputDecoration(
+                        hintText: 'Add Drive Link',
+                        counterText: '',
+                        contentPadding: EdgeInsets.fromLTRB(14, 5, 14, 5),
+                        // filled: true,
+                        // fillColor: Colors.white,
+                        border: OutlineInputBorder(
+                            // borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(10)),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: Text('Remove'),
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                          minimumSize: Size(50, 30),
+                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        height: 40,
+                        width: 80,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: Text(
+                            'Save',
+                            style: TextStyle(
+                                color: Colors.amberAccent,
+                                fontSize: 20,
+                                fontFamily: 'Times New Roman'),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Color.fromARGB(255, 20, 20, 20),
+                            foregroundColor: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            );
+          });
+    }
+
+    //document add
+    Future<void> _addDocument() async {
+      await showDialog<void>(
+          context: context,
+          builder: (BuildContext context) {
+            return SimpleDialog(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
+              backgroundColor: Color.fromARGB(255, 255, 255, 255),
+              // title: const Text('Select Booking Type'),
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 5, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
+                        child: Text(
+                          'Add Document',
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 0, 15, 178),
+                              fontFamily: 'Times New Roman',
+                              fontSize: 27),
+                        ),
+                      ),
+                      Expanded(child: Container()),
+                      IconButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          icon: Icon(
+                            Icons.close,
+                            color: Color.fromARGB(255, 0, 0, 0),
+                            size: 35,
+                          ))
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                  child: SizedBox(
+                    // height: 50,
+                    child: TextFormField(
+                      // maxLines: 7,
+                      keyboardType: TextInputType.number,
+                      cursorColor: Colors.black,
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 15,
+                          letterSpacing: 1.1,
+                          fontFamily: 'Times New Roman'),
+                      decoration: InputDecoration(
+                        hintText: 'Add Document Link',
+                        counterText: '',
+                        contentPadding: EdgeInsets.fromLTRB(14, 5, 14, 5),
+                        // filled: true,
+                        // fillColor: Colors.white,
+                        border: OutlineInputBorder(
+                            // borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(10)),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: Text('Remove'),
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                          minimumSize: Size(50, 30),
+                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        height: 40,
+                        width: 80,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: Text(
+                            'Save',
+                            style: TextStyle(
+                                color: Colors.amberAccent,
+                                fontSize: 20,
+                                fontFamily: 'Times New Roman'),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Color.fromARGB(255, 20, 20, 20),
+                            foregroundColor: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            );
+          });
+    }
+
+    //website add
+    Future<void> _addCloud() async {
+      await showDialog<void>(
+          context: context,
+          builder: (BuildContext context) {
+            return SimpleDialog(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
+              backgroundColor: Color.fromARGB(255, 255, 255, 255),
+              // title: const Text('Select Booking Type'),
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 5, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
+                        child: Text(
+                          'Add Cloud',
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 0, 15, 178),
+                              fontFamily: 'Times New Roman',
+                              fontSize: 27),
+                        ),
+                      ),
+                      Expanded(child: Container()),
+                      IconButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          icon: Icon(
+                            Icons.close,
+                            color: Color.fromARGB(255, 0, 0, 0),
+                            size: 35,
+                          ))
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                  child: SizedBox(
+                    // height: 50,
+                    child: TextFormField(
+                      // maxLines: 7,
+                      keyboardType: TextInputType.number,
+                      cursorColor: Colors.black,
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 15,
+                          letterSpacing: 1.1,
+                          fontFamily: 'Times New Roman'),
+                      decoration: InputDecoration(
+                        hintText: 'Add Cloud Link',
+                        counterText: '',
+                        contentPadding: EdgeInsets.fromLTRB(14, 5, 14, 5),
+                        // filled: true,
+                        // fillColor: Colors.white,
+                        border: OutlineInputBorder(
+                            // borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(10)),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: Text('Remove'),
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                          minimumSize: Size(50, 30),
+                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        height: 40,
+                        width: 80,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: Text(
+                            'Save',
+                            style: TextStyle(
+                                color: Colors.amberAccent,
+                                fontSize: 20,
+                                fontFamily: 'Times New Roman'),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Color.fromARGB(255, 20, 20, 20),
+                            foregroundColor: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            );
+          });
+    }
+
+    //messenger add
+    Future<void> _addMessenger() async {
+      await showDialog<void>(
+          context: context,
+          builder: (BuildContext context) {
+            return SimpleDialog(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
+              backgroundColor: Color.fromARGB(255, 255, 255, 255),
+              // title: const Text('Select Booking Type'),
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 5, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
+                        child: Text(
+                          'Add Messenger',
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 0, 15, 178),
+                              fontFamily: 'Times New Roman',
+                              fontSize: 27),
+                        ),
+                      ),
+                      Expanded(child: Container()),
+                      IconButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          icon: Icon(
+                            Icons.close,
+                            color: Color.fromARGB(255, 0, 0, 0),
+                            size: 35,
+                          ))
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                  child: SizedBox(
+                    // height: 50,
+                    child: TextFormField(
+                      // maxLines: 7,
+                      keyboardType: TextInputType.number,
+                      cursorColor: Colors.black,
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 15,
+                          letterSpacing: 1.1,
+                          fontFamily: 'Times New Roman'),
+                      decoration: InputDecoration(
+                        hintText: 'Add Messenger',
                         counterText: '',
                         contentPadding: EdgeInsets.fromLTRB(14, 5, 14, 5),
                         // filled: true,
@@ -941,7 +2989,14 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                   Padding(
                     padding: const EdgeInsets.all(8),
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => AddBusinessEmails()),
+                            // ModalRoute.withName("/MainScreen")
+                            ((route) => true));
+                      },
                       child: Column(
                         children: [
                           Container(
@@ -973,7 +3028,9 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                   Padding(
                     padding: const EdgeInsets.all(8),
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        _addwhatsapp();
+                      },
                       child: Column(
                         children: [
                           Container(
@@ -1005,7 +3062,9 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                   Padding(
                     padding: const EdgeInsets.all(8),
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        _addMessenger();
+                      },
                       child: Column(
                         children: [
                           Container(
@@ -1050,7 +3109,9 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
               Padding(
                 padding: const EdgeInsets.all(8),
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    _addAddress(context);
+                  },
                   child: Column(
                     children: [
                       Container(
@@ -1078,6 +3139,585 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                     ],
                   ),
                 ),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(2, 15, 2, 5),
+                child: Text(
+                  'Website & Links',
+                  style: TextStyle(
+                      fontFamily: 'Times New Roman',
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromARGB(255, 9, 0, 103)),
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: InkWell(
+                      onTap: () {
+                        _addWebsite();
+                      },
+                      child: Column(
+                        children: [
+                          Container(
+                            height: 72,
+                            width: 72,
+                            decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 0, 21, 104),
+                              border: Border.all(color: Colors.white, width: 2),
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            child: Icon(
+                              FontAwesomeIcons.earthAsia,
+                              size: 42,
+                              color: Colors.white,
+                            ),
+                          ),
+                          Text(
+                            'Website',
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 3, 0, 82),
+                                fontSize: 15,
+                                fontFamily: 'Times New Roman',
+                                fontWeight: FontWeight.w500),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: InkWell(
+                      onTap: () {
+                        _addDrive();
+                      },
+                      child: Column(
+                        children: [
+                          Container(
+                            height: 72,
+                            width: 72,
+                            decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 0, 21, 104),
+                              border: Border.all(color: Colors.white, width: 2),
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            child: Icon(
+                              FontAwesomeIcons.googleDrive,
+                              size: 42,
+                              color: Colors.white,
+                            ),
+                          ),
+                          Text(
+                            'Drive Link',
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 3, 0, 82),
+                                fontSize: 15,
+                                fontFamily: 'Times New Roman',
+                                fontWeight: FontWeight.w500),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: InkWell(
+                      onTap: () {
+                        _addDocument();
+                      },
+                      child: Column(
+                        children: [
+                          Container(
+                            height: 72,
+                            width: 72,
+                            decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 0, 21, 104),
+                              border: Border.all(color: Colors.white, width: 2),
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            child: Icon(
+                              Icons.edit_document,
+                              size: 42,
+                              color: Colors.white,
+                            ),
+                          ),
+                          Text(
+                            'Document',
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 3, 0, 82),
+                                fontSize: 15,
+                                fontFamily: 'Times New Roman',
+                                fontWeight: FontWeight.w500),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: InkWell(
+                      onTap: () {
+                        _addCloud();
+                      },
+                      child: Column(
+                        children: [
+                          Container(
+                            height: 72,
+                            width: 72,
+                            decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 0, 21, 104),
+                              border: Border.all(color: Colors.white, width: 2),
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            child: Icon(
+                              FontAwesomeIcons.cloud,
+                              size: 42,
+                              color: Color.fromARGB(255, 255, 255, 255),
+                            ),
+                          ),
+                          Text(
+                            'Cloud Link',
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 3, 0, 82),
+                                fontSize: 15,
+                                fontFamily: 'Times New Roman',
+                                fontWeight: FontWeight.w500),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(2, 15, 2, 5),
+                child: Text(
+                  'Social Media',
+                  style: TextStyle(
+                      fontFamily: 'Times New Roman',
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromARGB(255, 9, 0, 103)),
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: InkWell(
+                      onTap: () {
+                        _addSkype();
+                      },
+                      child: Column(
+                        children: [
+                          Container(
+                            height: 72,
+                            width: 72,
+                            decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 0, 21, 104),
+                              border: Border.all(color: Colors.white, width: 2),
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            child: Icon(
+                              FontAwesomeIcons.skype,
+                              size: 42,
+                              color: Colors.white,
+                            ),
+                          ),
+                          Text(
+                            'Skype',
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 3, 0, 82),
+                                fontSize: 15,
+                                fontFamily: 'Times New Roman',
+                                fontWeight: FontWeight.w500),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: InkWell(
+                      onTap: () {
+                        _addTwitter();
+                      },
+                      child: Column(
+                        children: [
+                          Container(
+                            height: 72,
+                            width: 72,
+                            decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 0, 21, 104),
+                              border: Border.all(color: Colors.white, width: 2),
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            child: Icon(
+                              FontAwesomeIcons.twitter,
+                              size: 42,
+                              color: Colors.white,
+                            ),
+                          ),
+                          Text(
+                            'Twitter',
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 3, 0, 82),
+                                fontSize: 15,
+                                fontFamily: 'Times New Roman',
+                                fontWeight: FontWeight.w500),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: InkWell(
+                      onTap: () {
+                        _addLinkedin();
+                      },
+                      child: Column(
+                        children: [
+                          Container(
+                            height: 72,
+                            width: 72,
+                            decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 0, 21, 104),
+                              border: Border.all(color: Colors.white, width: 2),
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            child: Icon(
+                              FontAwesomeIcons.linkedin,
+                              size: 42,
+                              color: Colors.white,
+                            ),
+                          ),
+                          Text(
+                            'LinkedIn',
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 3, 0, 82),
+                                fontSize: 15,
+                                fontFamily: 'Times New Roman',
+                                fontWeight: FontWeight.w500),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: InkWell(
+                      onTap: () {
+                        _addFacebook();
+                      },
+                      child: Column(
+                        children: [
+                          Container(
+                            height: 72,
+                            width: 72,
+                            decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 0, 21, 104),
+                              border: Border.all(color: Colors.white, width: 2),
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            child: Icon(
+                              FontAwesomeIcons.facebook,
+                              size: 42,
+                              color: Color.fromARGB(255, 255, 255, 255),
+                            ),
+                          ),
+                          Text(
+                            'Facebook',
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 3, 0, 82),
+                                fontSize: 15,
+                                fontFamily: 'Times New Roman',
+                                fontWeight: FontWeight.w500),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: InkWell(
+                      onTap: () {
+                        _addInstagram();
+                      },
+                      child: Column(
+                        children: [
+                          Container(
+                            height: 72,
+                            width: 72,
+                            decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 0, 21, 104),
+                              border: Border.all(color: Colors.white, width: 2),
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            child: Icon(
+                              FontAwesomeIcons.instagram,
+                              size: 42,
+                              color: Color.fromARGB(255, 255, 255, 255),
+                            ),
+                          ),
+                          Text(
+                            'Instagram',
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 3, 0, 82),
+                                fontSize: 15,
+                                fontFamily: 'Times New Roman',
+                                fontWeight: FontWeight.w500),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(2, 15, 2, 5),
+                child: Text(
+                  'Payment',
+                  style: TextStyle(
+                      fontFamily: 'Times New Roman',
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromARGB(255, 9, 0, 103)),
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: InkWell(
+                      onTap: () {
+                        _addGpay();
+                      },
+                      child: Column(
+                        children: [
+                          Container(
+                            height: 72,
+                            width: 72,
+                            decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 0, 21, 104),
+                              border: Border.all(color: Colors.white, width: 2),
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            child: Icon(
+                              FontAwesomeIcons.googlePay,
+                              size: 42,
+                              color: Colors.white,
+                            ),
+                          ),
+                          Text(
+                            'GPay',
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 3, 0, 82),
+                                fontSize: 15,
+                                fontFamily: 'Times New Roman',
+                                fontWeight: FontWeight.w500),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: InkWell(
+                      onTap: () {
+                        _addPaytm();
+                      },
+                      child: Column(
+                        children: [
+                          Container(
+                            height: 72,
+                            width: 72,
+                            decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 0, 21, 104),
+                              border: Border.all(color: Colors.white, width: 2),
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            child: Icon(
+                              FontAwesomeIcons.paypal,
+                              size: 42,
+                              color: Colors.white,
+                            ),
+                          ),
+                          Text(
+                            'Paytm',
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 3, 0, 82),
+                                fontSize: 15,
+                                fontFamily: 'Times New Roman',
+                                fontWeight: FontWeight.w500),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(2, 15, 2, 5),
+                child: Text(
+                  'Other Information',
+                  style: TextStyle(
+                      fontFamily: 'Times New Roman',
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromARGB(255, 9, 0, 103)),
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: InkWell(
+                      onTap: () {
+                        _addedu();
+                      },
+                      child: Column(
+                        children: [
+                          Container(
+                            height: 72,
+                            width: 72,
+                            decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 0, 21, 104),
+                              border: Border.all(color: Colors.white, width: 2),
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            child: Icon(
+                              FontAwesomeIcons.graduationCap,
+                              size: 42,
+                              color: Colors.white,
+                            ),
+                          ),
+                          Text(
+                            'Education',
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 3, 0, 82),
+                                fontSize: 15,
+                                fontFamily: 'Times New Roman',
+                                fontWeight: FontWeight.w500),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: InkWell(
+                      onTap: () {
+                        _addExp();
+                      },
+                      child: Column(
+                        children: [
+                          Container(
+                            height: 72,
+                            width: 72,
+                            decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 0, 21, 104),
+                              border: Border.all(color: Colors.white, width: 2),
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            child: Icon(
+                              FontAwesomeIcons.certificate,
+                              size: 42,
+                              color: Colors.white,
+                            ),
+                          ),
+                          Text(
+                            'Experience',
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 3, 0, 82),
+                                fontSize: 15,
+                                fontFamily: 'Times New Roman',
+                                fontWeight: FontWeight.w500),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: InkWell(
+                      onTap: () {
+                        _addhobby();
+                      },
+                      child: Column(
+                        children: [
+                          Container(
+                            height: 72,
+                            width: 72,
+                            decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 0, 21, 104),
+                              border: Border.all(color: Colors.white, width: 2),
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            child: Icon(
+                              FontAwesomeIcons.puzzlePiece,
+                              size: 42,
+                              color: Colors.white,
+                            ),
+                          ),
+                          Text(
+                            'Hobbies',
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 3, 0, 82),
+                                fontSize: 15,
+                                fontFamily: 'Times New Roman',
+                                fontWeight: FontWeight.w500),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: InkWell(
+                      onTap: () {
+                        _addinfo();
+                      },
+                      child: Column(
+                        children: [
+                          Container(
+                            height: 72,
+                            width: 72,
+                            decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 0, 21, 104),
+                              border: Border.all(color: Colors.white, width: 2),
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            child: Icon(
+                              FontAwesomeIcons.info,
+                              size: 42,
+                              color: Colors.white,
+                            ),
+                          ),
+                          Text(
+                            'Info',
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 3, 0, 82),
+                                fontSize: 15,
+                                fontFamily: 'Times New Roman',
+                                fontWeight: FontWeight.w500),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
