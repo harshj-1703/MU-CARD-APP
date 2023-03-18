@@ -164,8 +164,7 @@ class _AddBusinessMobilesState extends State<AddBusinessMobiles> {
                           children: [
                             Expanded(
                               child: Padding(
-                                padding:
-                                    const EdgeInsets.fromLTRB(10, 3, 10, 3),
+                                padding: const EdgeInsets.fromLTRB(7, 3, 2, 3),
                                 child: InternationalPhoneNumberInput(
                                   // isEnabled: !setNumberValidate,
                                   onInputChanged: (PhoneNumber number) {
@@ -185,10 +184,10 @@ class _AddBusinessMobilesState extends State<AddBusinessMobiles> {
                                       color: Colors.black, fontSize: 18),
                                   textAlign: TextAlign.start,
                                   textStyle: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.w600,
-                                      fontFamily: 'Times New Roman',
-                                      letterSpacing: 1.25),
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.w600,
+                                    fontFamily: 'Times New Roman',
+                                  ),
                                   formatInput: true,
                                   maxLength: 12,
                                   keyboardType: TextInputType.numberWithOptions(

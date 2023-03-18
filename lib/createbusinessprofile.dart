@@ -186,7 +186,7 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                           style: TextStyle(
                               color: Color.fromARGB(255, 0, 15, 178),
                               fontFamily: 'Times New Roman',
-                              fontSize: 27),
+                              fontSize: 24),
                         ),
                       ),
                       Expanded(child: Container()),
@@ -357,7 +357,7 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                           style: TextStyle(
                               color: Color.fromARGB(255, 0, 15, 178),
                               fontFamily: 'Times New Roman',
-                              fontSize: 27),
+                              fontSize: 24),
                         ),
                       ),
                       Expanded(child: Container()),
@@ -473,7 +473,7 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                           style: TextStyle(
                               color: Color.fromARGB(255, 0, 15, 178),
                               fontFamily: 'Times New Roman',
-                              fontSize: 27),
+                              fontSize: 24),
                         ),
                       ),
                       Expanded(child: Container()),
@@ -589,7 +589,7 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                           style: TextStyle(
                               color: Color.fromARGB(255, 0, 15, 178),
                               fontFamily: 'Times New Roman',
-                              fontSize: 27),
+                              fontSize: 24),
                         ),
                       ),
                       Expanded(child: Container()),
@@ -705,7 +705,7 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                           style: TextStyle(
                               color: Color.fromARGB(255, 0, 15, 178),
                               fontFamily: 'Times New Roman',
-                              fontSize: 27),
+                              fontSize: 24),
                         ),
                       ),
                       Expanded(child: Container()),
@@ -821,7 +821,7 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                           style: TextStyle(
                               color: Color.fromARGB(255, 0, 15, 178),
                               fontFamily: 'Times New Roman',
-                              fontSize: 27),
+                              fontSize: 24),
                         ),
                       ),
                       Expanded(child: Container()),
@@ -937,7 +937,7 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                           style: TextStyle(
                               color: Color.fromARGB(255, 0, 15, 178),
                               fontFamily: 'Times New Roman',
-                              fontSize: 27),
+                              fontSize: 24),
                         ),
                       ),
                       Expanded(child: Container()),
@@ -1053,7 +1053,7 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                           style: TextStyle(
                               color: Color.fromARGB(255, 0, 15, 178),
                               fontFamily: 'Times New Roman',
-                              fontSize: 27),
+                              fontSize: 24),
                         ),
                       ),
                       Expanded(child: Container()),
@@ -1243,7 +1243,7 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                           style: TextStyle(
                               color: Color.fromARGB(255, 0, 15, 178),
                               fontFamily: 'Times New Roman',
-                              fontSize: 27),
+                              fontSize: 24),
                         ),
                       ),
                       Expanded(child: Container()),
@@ -1359,7 +1359,7 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                           style: TextStyle(
                               color: Color.fromARGB(255, 0, 15, 178),
                               fontFamily: 'Times New Roman',
-                              fontSize: 27),
+                              fontSize: 24),
                         ),
                       ),
                       Expanded(child: Container()),
@@ -1475,7 +1475,7 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                           style: TextStyle(
                               color: Color.fromARGB(255, 0, 15, 178),
                               fontFamily: 'Times New Roman',
-                              fontSize: 27),
+                              fontSize: 24),
                         ),
                       ),
                       Expanded(child: Container()),
@@ -1591,7 +1591,7 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                           style: TextStyle(
                               color: Color.fromARGB(255, 0, 15, 178),
                               fontFamily: 'Times New Roman',
-                              fontSize: 27),
+                              fontSize: 24),
                         ),
                       ),
                       Expanded(child: Container()),
@@ -1707,7 +1707,7 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                           style: TextStyle(
                               color: Color.fromARGB(255, 0, 15, 178),
                               fontFamily: 'Times New Roman',
-                              fontSize: 27),
+                              fontSize: 24),
                         ),
                       ),
                       Expanded(child: Container()),
@@ -1823,7 +1823,7 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                           style: TextStyle(
                               color: Color.fromARGB(255, 0, 15, 178),
                               fontFamily: 'Times New Roman',
-                              fontSize: 27),
+                              fontSize: 24),
                         ),
                       ),
                       Expanded(child: Container()),
@@ -1939,7 +1939,7 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                           style: TextStyle(
                               color: Color.fromARGB(255, 0, 15, 178),
                               fontFamily: 'Times New Roman',
-                              fontSize: 27),
+                              fontSize: 24),
                         ),
                       ),
                       Expanded(child: Container()),
@@ -2055,7 +2055,7 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                           style: TextStyle(
                               color: Color.fromARGB(255, 0, 15, 178),
                               fontFamily: 'Times New Roman',
-                              fontSize: 27),
+                              fontSize: 24),
                         ),
                       ),
                       Expanded(child: Container()),
@@ -2171,7 +2171,7 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                           style: TextStyle(
                               color: Color.fromARGB(255, 0, 15, 178),
                               fontFamily: 'Times New Roman',
-                              fontSize: 27),
+                              fontSize: 24),
                         ),
                       ),
                       Expanded(child: Container()),
@@ -2287,7 +2287,7 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                           style: TextStyle(
                               color: Color.fromARGB(255, 0, 15, 178),
                               fontFamily: 'Times New Roman',
-                              fontSize: 27),
+                              fontSize: 24),
                         ),
                       ),
                       Expanded(child: Container()),
@@ -2403,7 +2403,7 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                           style: TextStyle(
                               color: Color.fromARGB(255, 0, 15, 178),
                               fontFamily: 'Times New Roman',
-                              fontSize: 27),
+                              fontSize: 24),
                         ),
                       ),
                       Expanded(child: Container()),
@@ -2519,7 +2519,7 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                           style: TextStyle(
                               color: Color.fromARGB(255, 0, 15, 178),
                               fontFamily: 'Times New Roman',
-                              fontSize: 27),
+                              fontSize: 24),
                         ),
                       ),
                       Expanded(child: Container()),
@@ -2635,7 +2635,7 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                           style: TextStyle(
                               color: Color.fromARGB(255, 0, 15, 178),
                               fontFamily: 'Times New Roman',
-                              fontSize: 27),
+                              fontSize: 24),
                         ),
                       ),
                       Expanded(child: Container()),
@@ -2947,7 +2947,7 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(4),
                     child: InkWell(
                       onTap: () {
                         // _addContacts();
@@ -2987,7 +2987,7 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(4),
                     child: InkWell(
                       onTap: () {
                         Navigator.pushAndRemoveUntil(
@@ -3026,7 +3026,7 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(4),
                     child: InkWell(
                       onTap: () {
                         _addwhatsapp();
@@ -3060,7 +3060,7 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(4),
                     child: InkWell(
                       onTap: () {
                         _addMessenger();
@@ -3107,7 +3107,7 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(8),
+                padding: const EdgeInsets.all(4),
                 child: InkWell(
                   onTap: () {
                     _addAddress(context);
@@ -3155,7 +3155,7 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(4),
                     child: InkWell(
                       onTap: () {
                         _addWebsite();
@@ -3189,7 +3189,7 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(4),
                     child: InkWell(
                       onTap: () {
                         _addDrive();
@@ -3223,7 +3223,7 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(4),
                     child: InkWell(
                       onTap: () {
                         _addDocument();
@@ -3257,7 +3257,7 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(4),
                     child: InkWell(
                       onTap: () {
                         _addCloud();
@@ -3307,7 +3307,7 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(4),
                     child: InkWell(
                       onTap: () {
                         _addSkype();
@@ -3341,7 +3341,7 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(4),
                     child: InkWell(
                       onTap: () {
                         _addTwitter();
@@ -3375,7 +3375,7 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(4),
                     child: InkWell(
                       onTap: () {
                         _addLinkedin();
@@ -3409,7 +3409,7 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(4),
                     child: InkWell(
                       onTap: () {
                         _addFacebook();
@@ -3448,7 +3448,7 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(4),
                     child: InkWell(
                       onTap: () {
                         _addInstagram();
@@ -3498,7 +3498,7 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(4),
                     child: InkWell(
                       onTap: () {
                         _addGpay();
@@ -3532,7 +3532,7 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(4),
                     child: InkWell(
                       onTap: () {
                         _addPaytm();
@@ -3582,7 +3582,7 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(4),
                     child: InkWell(
                       onTap: () {
                         _addedu();
@@ -3616,7 +3616,7 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(4),
                     child: InkWell(
                       onTap: () {
                         _addExp();
@@ -3650,7 +3650,7 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(4),
                     child: InkWell(
                       onTap: () {
                         _addhobby();
@@ -3684,7 +3684,7 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile>
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(4),
                     child: InkWell(
                       onTap: () {
                         _addinfo();
