@@ -30,8 +30,16 @@ class _LoginScreenState extends State<LoginScreen> {
         backgroundColor: Colors.transparent,
         body: Column(
           children: [
+            SizedBox(
+              height: 50,
+              width: double.infinity,
+            ),
+            Image.asset(
+              'assets/images/mu-logo.png',
+              width: 300,
+            ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(0, 4, 0, 0),
+              padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
               child: CarouselSlider(
                   items: [
                     Padding(
@@ -41,7 +49,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             borderRadius: BorderRadius.circular(7),
                             image: DecorationImage(
                                 image:
-                                    AssetImage('assets/images/demo/demo1.jpeg'),
+                                    AssetImage('assets/images/demo/demo1.jpg'),
                                 fit: BoxFit.fill)),
                       ),
                     ),
@@ -52,7 +60,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             borderRadius: BorderRadius.circular(7),
                             image: DecorationImage(
                                 image:
-                                    AssetImage('assets/images/demo/demo2.png'),
+                                    AssetImage('assets/images/demo/demo2.jpg'),
                                 fit: BoxFit.fill)),
                       ),
                     ),
@@ -67,9 +75,20 @@ class _LoginScreenState extends State<LoginScreen> {
                                 fit: BoxFit.fill)),
                       ),
                     ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(3, 0, 3, 0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(7),
+                            image: DecorationImage(
+                                image:
+                                    AssetImage('assets/images/demo/demo4.jpg'),
+                                fit: BoxFit.fill)),
+                      ),
+                    ),
                   ],
                   options: CarouselOptions(
-                    height: 500,
+                    height: 300,
                     aspectRatio: 16 / 9,
                     viewportFraction: 0.98,
                     initialPage: 0,
