@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mu_card/login/loginscreen.dart';
+import 'package:mu_card/startscreen.dart';
 import 'dashboard.dart';
 
 void main() {
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LoginScreen(); //return to statefullwidget of MyScreen class
+    return StartScreen(); //return to statefullwidget of MyScreen class
   }
 
   static of(BuildContext context) {}
