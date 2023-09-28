@@ -66,7 +66,7 @@ class _ProfilesState extends State<Profiles> {
                         Row(
                           children: [
                             Padding(
-                              padding: const EdgeInsets.all(3),
+                              padding: const EdgeInsets.all(10),
                               child: Column(
                                 children: [
                                   Container(
@@ -103,46 +103,6 @@ class _ProfilesState extends State<Profiles> {
                             ),
                           ],
                         ),
-                        Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(3),
-                              child: Column(
-                                children: [
-                                  Container(
-                                    height: 60,
-                                    width: 60,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(40),
-                                        color: Colors.grey),
-                                    child: IconButton(
-                                        onPressed: () {
-                                          Navigator.pushAndRemoveUntil(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      AddLinkedInProfile()),
-                                              ((route) => true));
-                                        },
-                                        icon: Icon(
-                                          FontAwesomeIcons.linkedin,
-                                          size: 40,
-                                        )),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(2),
-                                    child: Text(
-                                      'LinkedIn',
-                                      style: TextStyle(
-                                          fontFamily: 'Times New Roman',
-                                          fontSize: 15),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
                       ],
                     ),
                     Column(
@@ -150,7 +110,7 @@ class _ProfilesState extends State<Profiles> {
                         Row(
                           children: [
                             Padding(
-                              padding: const EdgeInsets.all(3),
+                              padding: const EdgeInsets.all(10),
                               child: Column(
                                 children: [
                                   Container(
@@ -177,130 +137,6 @@ class _ProfilesState extends State<Profiles> {
                                     padding: const EdgeInsets.all(2),
                                     child: Text(
                                       'Personal',
-                                      style: TextStyle(
-                                          fontFamily: 'Times New Roman',
-                                          fontSize: 15),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(3),
-                              child: Column(
-                                children: [
-                                  Container(
-                                    height: 60,
-                                    width: 60,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(40),
-                                        color: Colors.grey),
-                                    child: IconButton(
-                                        onPressed: () {
-                                          Navigator.pushAndRemoveUntil(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      AddYoutubeProfile()),
-                                              ((route) => true));
-                                        },
-                                        icon: Icon(
-                                          FontAwesomeIcons.youtube,
-                                          size: 40,
-                                        )),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(2),
-                                    child: Text(
-                                      'YouTube',
-                                      style: TextStyle(
-                                          fontFamily: 'Times New Roman',
-                                          fontSize: 15),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(3),
-                              child: Column(
-                                children: [
-                                  Container(
-                                    height: 60,
-                                    width: 60,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(40),
-                                        color: Colors.grey),
-                                    child: IconButton(
-                                        onPressed: () {
-                                          Navigator.pushAndRemoveUntil(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      AddInstaProfile()),
-                                              ((route) => true));
-                                        },
-                                        icon: Icon(
-                                          FontAwesomeIcons.instagram,
-                                          size: 40,
-                                        )),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(2),
-                                    child: Text(
-                                      'Instagram',
-                                      style: TextStyle(
-                                          fontFamily: 'Times New Roman',
-                                          fontSize: 15),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(3),
-                              child: Column(
-                                children: [
-                                  Container(
-                                    height: 60,
-                                    width: 60,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(40),
-                                        color: Colors.grey),
-                                    child: IconButton(
-                                        onPressed: () {
-                                          Navigator.pushAndRemoveUntil(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      AddSpotifyProfile()),
-                                              ((route) => true));
-                                        },
-                                        icon: Icon(
-                                          FontAwesomeIcons.spotify,
-                                          size: 40,
-                                        )),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(2),
-                                    child: Text(
-                                      'Spotify',
                                       style: TextStyle(
                                           fontFamily: 'Times New Roman',
                                           fontSize: 15),
