@@ -163,28 +163,25 @@ class _ProfilesState extends State<Profiles> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: SizedBox(
-            height: MediaQuery.of(context).size.height - 200,
-            child: Center(
-              child: SizedBox(
-                height: 40,
-                width: 180,
-                child: ElevatedButton(
-                  onPressed: () {
-                    createProfile();
-                  },
-                  child: Text(
-                    '+ Create Profile',
-                    style: TextStyle(
-                        color: Colors.amberAccent,
-                        fontSize: 20,
-                        fontFamily: 'Times New Roman'),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Color.fromARGB(255, 20, 20, 20),
-                    foregroundColor: Colors.white,
-                  ),
+          padding: const EdgeInsets.all(12),
+          child: Center(
+            child: SizedBox(
+              height: 40,
+              width: 180,
+              child: ElevatedButton(
+                onPressed: () {
+                  createProfile();
+                },
+                child: Text(
+                  '+ Create Profile',
+                  style: TextStyle(
+                      color: Colors.amberAccent,
+                      fontSize: 20,
+                      fontFamily: 'Times New Roman'),
+                ),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color.fromARGB(255, 20, 20, 20),
+                  foregroundColor: Colors.white,
                 ),
               ),
             ),
